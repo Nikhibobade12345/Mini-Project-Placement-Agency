@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+<style>
+.banner{
+	
+    width:100%;
+    height:175vh;
+    background:linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.2)),url(../img/nik.jpg);
+    background-size:cover;
+    color:black;
+}
+body {
+    background:#e2e2e2!important;
+}
+.bg-primary{
+    background:#009688 !important;
+}
+
+.my-card{
+    padding:20px;
+    background:#FFFFFF;
+}
+#login .container #login-row #login-column #login-box {
+  margin-top: 120px;
+  max-width: 600px;
+  height: 420px;
+  border: 1px solid #9C9C9C;
+  background-color: white;
+}
+#login .container #login-row #login-column #login-box #login-form {
+  padding: 20px;
+}
+#login .container #login-row #login-column #login-box #login-form #register-link {
+  margin-top: -85px;
+}
+@media only screen and(max-width){
+    .sidebar{
+    display:none;
+    width:100% !important;
+    background: white;
+    height:100%;
+    position:fixed;
+    padding-top: 45px;
+}
+.content{
+    margin-left:0% !important ;
+}
+    }
+    
+
+
+
+.sidebar{
+    width:18%;
+    background: white;
+    height:100%;
+    position:fixed;
+    padding-top: 45px;
+}
+.sidebar a{
+    display:block;
+    width:100%;
+    padding:10px 25px;
+    text-decoration: none;
+    color:green;
+}
+.sidebar a:hover{
+    background:gray;
+}
+.sidebar .divider{
+    height:.8px;
+    width:100%;
+    background:aqua;
+    margin-top:10px;
+}
+.content{
+    margin-left:25%;
+    
+}
+.sidebar .crossbtn{
+    position:absolute;
+    top:0px;
+    right:36px;
+    font-size:35px;
+    cursor:pointer;
+    
+}
+#gradient1 {
+height: 500px;
+background-color: #cccccc;
+background-image: radial-gradient(red, blue, green);
+}
+</style>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	crossorigin="anonymous"></script>
+<title>login page</title>
+</head>
+<body style="background-color:#cccccc;">
+	
+	
+
+	</br></br>
+	<style type="text/css">
+.topnav {
+    background-color:green;
+    overflow: hidden;
+}
+
+
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 18px;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: green;
+}
+
+
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+</style>
+<div class="banner">
+
+
+          <div class="topnav">
+  			<a th:href="@{/list}" required>Home</a>&nbsp &nbsp <a
+					th:href="@{/addRecruiterForm}">Add Recruiter</a>&nbsp &nbsp <a
+					th:href="@{/addUserForm}">Sign up</a>&nbsp &nbsp <a
+					th:href="@{/uLogin}">User Login</a>&nbsp &nbsp <a
+					th:href="@{/rLogin}">Recruiter Login</a>&nbsp &nbsp <a
+					th:href="@{/Feedback}">User Reviews</a>&nbsp &nbsp <a
+					th:href="@{/Feedback1}">Recruiter Reviews</a>&nbsp &nbsp
+
+			</div>
+            </br>
+            </br>
+	<center>
+	<h2 style="text-align:center; ">Recruiter Login Form</h2> <!-- changed -->
+	<hr>
+	
+	<form class ="col-5" th:action="@{/recruiterlogin}" th:object="${recruiter9}" method="post" >
+	<label><h6> User Name</h6></label>
+	<input type ="text" class ="form-control" th:field="*{username}" placeholder="enter your UserName" required >
+	<label><h6> Password</h6></label>
+	<input type ="password" class ="form-control" th:field="*{password}"placeholder="enter your Password" required>
+	</br>
+	
+	<button type="submit" class="btn btn-success">Login</button>
+	
+	<a th:href="@{/addRecruiterForm}" class="btn btn-primary">Sign Up</a>
+	</form>
+	
+	</div>
+
+
+</body>
+</html>

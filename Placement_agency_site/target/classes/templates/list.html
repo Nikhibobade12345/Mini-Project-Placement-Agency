@@ -1,0 +1,136 @@
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<center>
+	<style>
+#gradient1 {
+	height: 500px;
+	background-color: #cccccc;
+	background-image: radial-gradient(red, blue, green);
+}
+</style>
+
+	<head>
+<title>PLACEMENT AGENCY</title>
+
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+	integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+	crossorigin="anonymous" />
+<link rel="stylesheet" th:href="@{/css/style.css}">
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+	</head>
+
+	<body style="background-color: #ADD8E6;">
+
+		<div class="banner">
+
+			<br />
+
+
+
+
+			<style>
+.banner {
+	width: 100%;
+	height: 150vh;
+	background: linear-gradient(rgba(0, 0, 0, .1), rgba(0, 0, 0, .2)),
+		url(../img/nik.jpg);
+	background-size: cover;
+	color: black;
+}
+
+.topnav {
+	background-color: green;
+	overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+	float: left;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 22px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+	background-color: #ddd;
+	color: green;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+	background-color: #04AA6D;
+	color: white;
+}
+</style>
+			<br />
+
+
+			<div class="topnav">
+
+				<a th:href="@{/list}" required>Home</a>&nbsp &nbsp <a
+					th:href="@{/addRecruiterForm}">Add Recruiter</a>&nbsp &nbsp <a
+					th:href="@{/addUserForm}">Sign up</a>&nbsp &nbsp <a
+					th:href="@{/uLogin}">User Login</a>&nbsp &nbsp <a
+					th:href="@{/rLogin}">Recruiter Login</a>&nbsp &nbsp <a
+					th:href="@{/Feedback}">User Reviews</a>&nbsp &nbsp <a
+					th:href="@{/Feedback1}">Recruiter Reviews</a>&nbsp &nbsp
+
+
+
+			</div>
+			<br />
+			<br />
+
+			<center>
+				<h3 class="container">PLACEMENT AGENCY</h3>
+			</center>
+
+			<br />
+
+
+			<h2>Search Job</h2>
+			<form th:action="@{/list}" method="get">
+				<input type="text" name="keyword" th:value="${keyword}"
+					placeholder="Find by Company name & Location" size="90">
+				<button type="submit" class="btn btn-info">Search</button>
+
+				<br /> <br />
+
+
+				<table class="table table-bordered table-striped">
+
+					<thead>
+						<tr>
+							<th>Company Name</th>
+							<th>Location</th>
+							<th>Job Roll</th>
+							<th>Date of Posting</th>
+
+
+						</tr>
+					</thead>
+					<tbody>
+
+						<tr th:each="recruiter: ${recruiters}">
+							<td th:text="${recruiter.cname}" />
+							<td th:text="${recruiter.location}" />
+							<td th:text="${recruiter.jobroll}" />
+							<td th:text="${recruiter.dop}" />
+
+							<td>
+							<td><a th:href="@{/login(RId=${recruiter.id})}"
+								class="btn btn-info">Apply</a> <!-- <a th:href="@{/login}" class="btn btn-info">Apply</a> -->
+							</td>
+						</tr>
+					</tbody>
+
+				</table>
+</center>

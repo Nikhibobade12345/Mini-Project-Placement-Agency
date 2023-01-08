@@ -1,0 +1,432 @@
+
+<!DOCTYPE html>
+
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+
+
+<title>User List</title>
+</head>
+<body>
+
+	<div class=" mt-5">
+	<style type="text/css">
+	.banner{
+	
+    width:100%;
+    height:370vh;
+    background:linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.2)),url(../img/nik.jpg);
+    background-size:cover;
+    color:black;
+}
+	p {
+    color: red;
+    font-style: italic;
+}
+	body {
+    background:#e2e2e2!important;
+}
+.bg-primary{
+    background:#009688 !important;
+}
+
+.my-card{
+    padding:20px;
+    background:#FFFFFF;
+}
+#login .container #login-row #login-column #login-box {
+  margin-top: 120px;
+  max-width: 600px;
+  height: 420px;
+  border: 1px solid #9C9C9C;
+  background-color: white;
+}
+#login .container #login-row #login-column #login-box #login-form {
+  padding: 20px;
+}
+#login .container #login-row #login-column #login-box #login-form #register-link {
+  margin-top: -85px;
+}
+@media only screen and(max-width){
+    .sidebar{
+    display:none;
+    width:100% !important;
+    background: white;
+    height:100%;
+    position:fixed;
+    padding-top: 45px;
+}
+.content{
+    margin-left:0% !important ;
+}
+    }
+    
+
+
+
+.sidebar{
+    width:18%;
+    background: white;
+    height:100%;
+    position:fixed;
+    padding-top: 45px;
+}
+.sidebar a{
+    display:block;
+    width:100%;
+    padding:10px 25px;
+    text-decoration: none;
+    color:green;
+}
+.sidebar a:hover{
+    background:gray;
+}
+.sidebar .divider{
+    height:.8px;
+    width:100%;
+    background:aqua;
+    margin-top:10px;
+}
+.content{
+    margin-left:25%;
+    
+}
+.sidebar .crossbtn{
+    position:absolute;
+    top:0px;
+    right:36px;
+    font-size:35px;
+    cursor:pointer;
+    
+}
+	body {
+    background:#e2e2e2!important;
+}
+.bg-primary{
+    background:#009688 !important;
+}
+
+.my-card{
+    padding:20px;
+    background:#FFFFFF;
+}
+#login .container #login-row #login-column #login-box {
+  margin-top: 120px;
+  max-width: 600px;
+  height: 420px;
+  border: 1px solid #9C9C9C;
+  background-color: white;
+}
+#login .container #login-row #login-column #login-box #login-form {
+  padding: 20px;
+}
+#login .container #login-row #login-column #login-box #login-form #register-link {
+  margin-top: -85px;
+}
+@media only screen and(max-width){
+    .sidebar{
+    display:none;
+    width:100% !important;
+    background: white;
+    height:100%;
+    position:fixed;
+    padding-top: 45px;
+}
+.content{
+    margin-left:0% !important ;
+}
+    }
+    
+
+
+
+.sidebar{
+    width:18%;
+    background: white;
+    height:100%;
+    position:fixed;
+    padding-top: 45px;
+}
+.sidebar a{
+    display:block;
+    width:100%;
+    padding:10px 25px;
+    text-decoration: none;
+    color:green;
+}
+.sidebar a:hover{
+    background:gray;
+}
+.sidebar .divider{
+    height:.8px;
+    width:100%;
+    background:aqua;
+    margin-top:10px;
+}
+.content{
+    margin-left:25%;
+    
+}
+.sidebar .crossbtn{
+    position:absolute;
+    top:0px;
+    right:36px;
+    font-size:35px;
+    cursor:pointer;
+    
+}
+.topnav {
+    background-color: green;
+    overflow: hidden;
+}
+
+
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: green;
+}
+
+
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+input
+{
+  width:30%;
+}
+
+</style>
+<div class="banner">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+	integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"
+	integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/"
+	crossorigin="anonymous"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+          <div class="topnav">
+  			<a th:href="@{/list}" required>Home</a>&nbsp &nbsp <a
+					th:href="@{/addRecruiterForm}">Add Recruiter</a>&nbsp &nbsp <a
+					th:href="@{/addUserForm}">Sign up</a>&nbsp &nbsp <a
+					th:href="@{/uLogin}">User Login</a>&nbsp &nbsp <a
+					th:href="@{/rLogin}">Recruiter Login</a>&nbsp &nbsp <a
+					th:href="@{/Feedback}">User Reviews</a>&nbsp &nbsp <a
+					th:href="@{/Feedback1}">Recruiter Reviews</a>&nbsp &nbsp
+
+			</div>
+            </br>
+            </br>
+
+	
+
+		<br/>
+			<h3 style="text-align:center;">Add New User</h3>
+			<hr/>
+			
+	<center>		<form th:action="@{/saveUser}" th:object="${user}" method="POST">
+	
+	
+				 <h6> Enter First Name </h6>
+				  
+				 </br>
+				<input type="text" th:field="*{fname}"  placeholder="Enter First Name" />
+				</br>
+				   <p th:if="${#fields.hasErrors('fname')}" th:errorclass="error" th:errors="*{fname}" />
+				   </br>
+				       <h6> Enter Last Name </h6>
+				       </br>
+				<input type="text" th:field="*{lname}"  placeholder="Enter Last Name" />
+				</br>
+				   <p th:if="${#fields.hasErrors('lname')}" th:errorclass="error" th:errors="*{lname}" />
+				</br>
+				
+				<label for="gender"><h6> Select you gender </h6></label>
+				</br>
+<select name="gender">
+	<option value="none" selected>Gender</option>
+	<option value="male">Male</option>
+	<option value="female">Female</option>
+	<option value="other">other</option>
+</select>
+</br>
+</br>
+<p th:if="${#fields.hasErrors('gender')}" th:errorclass="error" th:errors="*{gender}" />
+				</br>
+				 <h6> Enter UserName </h6>
+				 </br>
+				<input type="text" th:field="*{username}"  placeholder="Enter Username" />
+				</br>
+						
+				<p th:if="${#fields.hasErrors('username')}" th:errorclass="error" th:errors="*{username}" />
+				</br>
+						
+				 <h6> Enter Password </h6>
+				 </br>
+				<input type="text" th:field="*{Password}"  placeholder="Enter Password" />
+				</br>
+				 <p th:if="${#fields.hasErrors('Password')}" th:errorclass="error" th:errors="*{Password}" />
+				
+				</br>
+				 <h6> Enter Email </h6>
+				 </br>
+				<input type="text" th:field="*{email}" placeholder="Enter Email" />
+				</br>
+						
+				<p th:if="${#fields.hasErrors('email')}" th:errorclass="error" th:errors="*{email}" />
+				</br>
+				
+				                  <h6> Enter Date Of Birth </h6>
+				                  </br>
+				                  
+				<input type="text" th:field="*{dob}"  placeholder="Enter Date of Birth" />
+				</br>
+				 <p th:if="${#fields.hasErrors('dob')}" th:errorclass="error" th:errors="*{dob}" />
+				</br>
+				                      <h6> Enter Mobile Number </h6>
+				                      </br>
+				                      
+				<input type="text" th:field="*{mobno}"  placeholder="Enter Mobile Number" />
+			
+			    </br>
+			     <p th:if="${#fields.hasErrors('mobno')}" th:errorclass="error" th:errors="*{mobno}" />
+			     
+				</br>
+				 <h6> Select Qualification </h6>
+				 </br>
+				<select name="qualification">
+	             <option value="none" selected>Qualification</option>
+	              <option value="12th">12th</option>
+	              <option value="Diploma">Diploma</option>
+	               <option value="Graduation">Graduation</option>
+	                 <option value="Post Graduation">Post Graduation</option>
+	
+                       </select>
+                            </br>
+						
+				<p th:if="${#fields.hasErrors('qualification')}" th:errorclass="error" th:errors="*{qualification}" />
+				</br>
+				</br>
+				<h6> Enter Passing Year  </h6>
+				</br>
+			    <input type="text" th:field="*{passingYear}"  placeholder="Enter Passing Year" />
+			
+			    </br>
+			     <p th:if="${#fields.hasErrors('passingYear')}" th:errorclass="error" th:errors="*{passingYear}" /> 
+				</br>
+				
+				<h6> Enter Collage Name </h6>
+				</br>
+				<input type="text" th:field="*{collgename}" placeholder="Enter College Name" />
+				</br>
+						
+				<p th:if="${#fields.hasErrors('collgename')}" th:errorclass="error" th:errors="*{collgename}" />
+				</br>
+				
+				<h6> Enter Job Roll </h6>
+				</br>
+				<input type="text" th:field="*{jobroll}"  placeholder="Enter Job Roll" />
+				</br>
+						
+				<p th:if="${#fields.hasErrors('jobroll')}" th:errorclass="error" th:errors="*{jobroll}" />
+				</br>
+				
+				<h6>Add Skills</h6>
+				</br>
+
+				<input type="text" th:field="*{skills}"  placeholder="Enter skills" />
+				</br>
+						
+				</br>
+				<h6> Enter City </h6>
+				</br>
+				<input type="text" th:field="*{city}"  placeholder="Enter City" />
+				</br>
+						
+				<p th:if="${#fields.hasErrors('city')}" th:errorclass="error" th:errors="*{city}" />
+				</br>
+				
+				<h6> Enter State </h6>
+				</br>
+				<input type="text" th:field="*{state}"  placeholder="Enter State" />
+				</br>
+						
+				<p th:if="${#fields.hasErrors('state')}" th:errorclass="error" th:errors="*{state}" />
+				</br>
+				
+				<h6> Enter Pincode </h6>
+				</br>
+				<input type="text" th:field="*{pincode}"  placeholder="Enter Pincode" />
+			
+			    </br>
+			     <p th:if="${#fields.hasErrors('pincode')}" th:errorclass="error" th:errors="*{pincode}" /> 
+				</br>
+				
+				<label for="gender"><h6> Select you Job TYpe </h6></label>
+               </br>
+               <select name="jobtype">
+	             <option value="none" selected>Job Type</option>
+	               <option value="part time">Part Time</option>
+	                 <option value="Full Time">Full Time</option>
+	
+                       </select>
+                            </br>
+						
+				<p th:if="${#fields.hasErrors('jobtype')}" th:errorclass="error" th:errors="*{jobtype}" />
+				</br>
+				</br>
+				 <h6> Enter Language </h6>
+				 </br>
+				 <input type="text" th:field="*{lang}"  placeholder="Enter your Language" />
+				</br>
+						
+				<p th:if="${#fields.hasErrors('lang')}" th:errorclass="error" th:errors="*{lang}" />
+				</br>
+				
+				 			<h6> Upload Resume </h6>
+				 			</br>
+			<center>  	<input type="file" th:field="*{docname}"  placeholder="Upload Resume" />
+				 </center>
+				</br>
+				<p th:if="${#fields.hasErrors('docname')}" th:errorclass="error" th:errors="*{docname}" />
+				</br>
+				
+				<button type="submit" class="btn btn-primary col-2">Save</button>
+				<input type="hidden" th:field="*{userid}" />
+				
+			</form>
+			<hr/>
+			<a th:href="@{/list}">Back to Home</a>
+		</center>
+		</div>
+		
+	</body>
+</html>

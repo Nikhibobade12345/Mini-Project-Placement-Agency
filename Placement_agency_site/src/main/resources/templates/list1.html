@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+
+
+<title>User List</title>
+</head>
+<body >
+
+	
+		<style type="text/css">
+		.banner{
+	
+    width:100%;
+    height:175vh;
+    background:linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.2)),url(../img/nik.jpg);
+    background-size:cover;
+    color:black;
+}
+body {
+	background: #e2e2e2 !important;
+}
+
+.bg-primary {
+	background: #009688 !important;
+}
+
+.my-card {
+	padding: 20px;
+	background: #FFFFFF;
+}
+
+#login .container #login-row #login-column #login-box {
+	margin-top: 120px;
+	max-width: 600px;
+	height: 420px;
+	border: 1px solid #9C9C9C;
+	background-color: white;
+}
+
+#login .container #login-row #login-column #login-box #login-form {
+	padding: 20px;
+}
+
+#login .container #login-row #login-column #login-box #login-form #register-link
+	{
+	margin-top: -85px;
+}
+
+@media only screen and(max-width) {
+	.sidebar {
+		display: none;
+		width: 100% !important;
+		background: white;
+		height: 100%;
+		position: fixed;
+		padding-top: 45px;
+	}
+	.content {
+		margin-left: 0% !important;
+	}
+}
+
+.sidebar {
+	width: 18%;
+	background: white;
+	height: 100%;
+	position: fixed;
+	padding-top: 45px;
+}
+
+.sidebar a {
+	display: block;
+	width: 100%;
+	padding: 10px 25px;
+	text-decoration: none;
+	color: green;
+}
+
+.sidebar a:hover {
+	background: gray;
+}
+
+.sidebar .divider {
+	height: .8px;
+	width: 100%;
+	background: aqua;
+	margin-top: 10px;
+}
+
+.content {
+	margin-left: 25%;
+}
+
+.sidebar .crossbtn {
+	position: absolute;
+	top: 0px;
+	right: 36px;
+	font-size: 35px;
+	cursor: pointer;
+}
+
+body {
+	background: #e2e2e2 !important;
+}
+
+.bg-primary {
+	background: #009688 !important;
+}
+
+.my-card {
+	padding: 20px;
+	background: #FFFFFF;
+}
+
+#login .container #login-row #login-column #login-box {
+	margin-top: 120px;
+	max-width: 600px;
+	height: 420px;
+	border: 1px solid #9C9C9C;
+	background-color: white;
+}
+
+#login .container #login-row #login-column #login-box #login-form {
+	padding: 20px;
+}
+
+#login .container #login-row #login-column #login-box #login-form #register-link
+	{
+	margin-top: -85px;
+}
+
+@media only screen and(max-width) {
+	.sidebar {
+		display: none;
+		width: 100% !important;
+		background: white;
+		height: 100%;
+		position: fixed;
+		padding-top: 45px;
+	}
+	.content {
+		margin-left: 0% !important;
+	}
+}
+
+.sidebar {
+	width: 18%;
+	background: white;
+	height: 100%;
+	position: fixed;
+	padding-top: 45px;
+}
+
+.sidebar a {
+	display: block;
+	width: 100%;
+	padding: 10px 25px;
+	text-decoration: none;
+	color: green;
+}
+
+.sidebar a:hover {
+	background: gray;
+}
+
+.sidebar .divider {
+	height: .8px;
+	width: 100%;
+	background: aqua;
+	margin-top: 10px;
+}
+
+.content {
+	margin-left: 25%;
+}
+
+.sidebar .crossbtn {
+	position: absolute;
+	top: 0px;
+	right: 36px;
+	font-size: 35px;
+	cursor: pointer;
+}
+
+.topnav {
+	background-color: green;
+	overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+	float: left;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 22px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+	background-color: #ddd;
+	color: green;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+	background-color: #04AA6D;
+	color: white;
+}
+</style>
+<div class="banner">
+<div class=" mt-5">
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+			crossorigin="anonymous">
+		<script
+			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+			integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp"
+			crossorigin="anonymous"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"
+			integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/"
+			crossorigin="anonymous"></script>
+		<link rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+		<div class="topnav">
+			<a th:href="@{/list}" required>Home</a>&nbsp &nbsp <a
+					th:href="@{/addRecruiterForm}">Add Recruiter</a>&nbsp &nbsp <a
+					th:href="@{/addUserForm}">Sign up</a>&nbsp &nbsp <a
+					th:href="@{/uLogin}">User Login</a>&nbsp &nbsp <a
+					th:href="@{/rLogin}">Recruiter Login</a>&nbsp &nbsp <a
+					th:href="@{/Feedback}">User Reviews</a>&nbsp &nbsp <a
+					th:href="@{/Feedback1}">Recruiter Reviews</a>&nbsp &nbsp
+
+		</div>
+		</br> </br>
+
+		<center>
+			<h1>User Deatils</h1>
+		</center>
+		</br> </br>
+	</div>
+	</form>
+	<table class="table table-bordered table-sm mt-2">
+		<center>
+			<thead>
+				<tr>
+					<th>First Name</th>
+					<th>Gender</th>
+
+					<th>Document</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<tr th:each="user: ${users}">
+					<td th:text="${user.fname}" />
+					<td th:text="${user.gender}" />
+
+					<td th:text="${user.docname}" />
+
+
+					<td><a th:href="@{/showUpdateForm(userId=${user.userid})}"
+						class="btn btn-info">Update</a> <a
+						th:href="@{/deleteUser(userId=${user.userid})}"
+						class="btn btn-danger ml-2">Delete</a> <!-- <a
+						th:href="@{/details3(userId=${user.id})}" class="btn btn-info">details</a>
+ -->
+ 
+					</td>
+
+				</tr>
+
+			</tbody>
+	</table>
+	<hr>
+	<center>
+		<a th:href="@{/addUserForm}">Back</a>
+	</center>
+	<br>
+	<center>
+		<a th:href="@{/list}">Back to Home</a>
+	</center>
+	</hr>
+	</center>
+</body>
+
+</html>
